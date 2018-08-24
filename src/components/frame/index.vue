@@ -1,7 +1,7 @@
 <template>
   <el-container class="frame">
     <sidemenu></sidemenu>
-    <el-container>
+    <el-container class="is-vertical">
       <headbar></headbar>
       <el-main>
         <transition>
