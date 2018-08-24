@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import Frame from '@/components/frame'
 import Main from '@/views/main'
+import Components from './module/components'
+import Pages from './module/pages'
 
 Vue.use(Router)
 
@@ -17,7 +19,9 @@ export default new Router({
         {
           path: 'main',
           component: Main
-        }
+        },
+        ...Components,
+        ...Pages
       ]
     }
   ]

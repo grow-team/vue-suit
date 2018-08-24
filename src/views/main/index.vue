@@ -3,6 +3,9 @@
 </template>
 <script>
 export default{
-  name: 'main'
+  name: 'vs-main',
+  data () {
+    return {}
+  }
 }
 </script>
