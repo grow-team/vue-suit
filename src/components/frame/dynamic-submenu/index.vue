@@ -11,6 +11,7 @@
 <script>
 import { createNamespacedHelpers } from 'vuex'
 import { UPDATE_VISITED_SUBMENU_LIST, DELETE_VISITED_SUBMENU } from '@/store/types'
+import { vsVisitedSubmenu } from '@/config'
 
 const { mapState, mapActions } = createNamespacedHelpers('app')
 export default{
@@ -30,7 +31,11 @@ export default{
     }
   },
   beforeMount () {
-    this.updateSMList()
+    // 没有缓存 打开菜单时，初始化菜单
+    let sessionDataSubmenu = sessionStorage.getItem(vsVisitedSubmenu)
+    if (!sessionDataSubmenu) {
+      this.updateSMList()
+    }
   },
   methods: {
     ...mapActions({

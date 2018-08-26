@@ -1,13 +1,38 @@
-import { APP_SIDEMENU_SWITCH, UPDATE_VISITED_SUBMENU_LIST, DELETE_VISITED_SUBMENU } from '@/store/types.js'
-
+import { APP_SIDEMENU_SWITCH, INIT_APP_SIDEMENU_SWITCH, INIT_VISITED_SUBMENU_LIST, UPDATE_VISITED_SUBMENU_LIST, DELETE_VISITED_SUBMENU } from '@/store/types.js'
+import { vsSideMenuCollapse, vsVisitedSubmenu } from '@/config'
+/**
+ * 在sessionStorage中记录打开tab页
+ * @param {Object} data
+ */
+function setVsVisitedSubmenu (data) {
+  if (!data) {
+    return
+  }
+  // todo 在存储router对象结构的时候
+  let subMenuStr = '['
+  for (let i = 0, j = data.length; i < j; i += 1) {
+    subMenuStr += `"${data[i].path}",`
+  }
+  subMenuStr = subMenuStr.substring(0, subMenuStr.length - 1)
+  subMenuStr += ']'
+  sessionStorage.setItem(vsVisitedSubmenu, subMenuStr)
+}
 const state = {
   sideMenuCollapse: false,
   visitedSubMenuList: [],
   curMenuRouter: {}
 }
 const mutations = {
+  [INIT_APP_SIDEMENU_SWITCH] (state, data) {
+    state.sideMenuCollapse = data
+  },
   [APP_SIDEMENU_SWITCH] (state, data) {
     state.sideMenuCollapse = !state.sideMenuCollapse
+    sessionStorage.setItem(vsSideMenuCollapse, state.sideMenuCollapse)
+  },
+  [INIT_VISITED_SUBMENU_LIST] (state, data) {
+    state.visitedSubMenuList = data.visitedRoute
+    state.curMenuRouter = data.curRoute
   },
   [UPDATE_VISITED_SUBMENU_LIST] (state, data) {
     state.curMenuRouter = data
@@ -25,6 +50,7 @@ const mutations = {
       }
       state.visitedSubMenuList.push(data)
     }
+    setVsVisitedSubmenu(state.visitedSubMenuList)
   },
   [DELETE_VISITED_SUBMENU] (state, data) {
     let j = state.visitedSubMenuList.length
@@ -41,9 +67,13 @@ const mutations = {
         break
       }
     }
+    setVsVisitedSubmenu(state.visitedSubMenuList)
   }
 }
 const actions = {
+  async [INIT_APP_SIDEMENU_SWITCH] ({ commit }, data) {
+    commit(INIT_APP_SIDEMENU_SWITCH, data)
+  },
   async [APP_SIDEMENU_SWITCH] ({ commit }) {
     commit(APP_SIDEMENU_SWITCH)
   },
@@ -52,6 +82,9 @@ const actions = {
   },
   async [DELETE_VISITED_SUBMENU] ({ commit }, data) {
     commit(DELETE_VISITED_SUBMENU, data)
+  },
+  async [INIT_VISITED_SUBMENU_LIST] ({ commit }, data) {
+    commit(INIT_VISITED_SUBMENU_LIST, data)
   }
 }
 export default {

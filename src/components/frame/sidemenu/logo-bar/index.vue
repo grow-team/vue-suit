@@ -7,7 +7,9 @@
 export default{
   name: 'logoBar',
   methods: {
+    data () {
 
+    }
   }
 }
 </script>
