@@ -9,7 +9,7 @@ export default [{
   component: Frame,
   meta: {
     title: 'pages',
-    icon: 'el-icon-menu'
+    icon: 'el-icon-goods'
   },
   children: [
     {

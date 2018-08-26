@@ -9,7 +9,7 @@ export default [{
   name: 'main',
   meta: {
     title: '主页',
-    icon: 'el-icon-menu'
+    icon: 'el-icon-tickets'
   },
   children: [{
     path: '/main',
