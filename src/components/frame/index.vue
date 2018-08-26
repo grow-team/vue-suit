@@ -4,7 +4,7 @@
     <el-container class="is-vertical">
       <headbar></headbar>
       <el-main>
-        <transition>
+        <transition name="el-fade-in-linear" mode="out-in">
           <router-view/>
         </transition>
       </el-main>
@@ -12,8 +12,8 @@
   </el-container>
 </template>
 <script>
-import sidemenu from '@/components/sidemenu'
-import headbar from '@/components/headbar'
+import sidemenu from '@/components/frame/sidemenu'
+import headbar from '@/components/frame/headbar'
 export default {
   name: 'frame',
   components: {
