@@ -10,7 +10,6 @@ const mutations = {
 }
 const actions = {
   async [APP_SIDEMENU_SWITCH] ({ commit }) {
-    console.log(11111)
     commit(APP_SIDEMENU_SWITCH)
   }
 }

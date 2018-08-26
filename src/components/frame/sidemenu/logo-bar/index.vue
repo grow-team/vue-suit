@@ -1,6 +1,6 @@
 <template>
   <div class="vs-logo">
-    logo
+    vue-suit
   </div>
 </template>
 <script>
@@ -12,11 +12,11 @@ export default{
 }
 </script>
 <style lang="less" scoped>
-  @import '../../../style/variable.less';
+  @import '../../../../style/variable.less';
   .vs-logo{
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     background-color: @logo-bg;
     color: @logo-color;

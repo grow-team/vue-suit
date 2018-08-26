@@ -1,0 +1,32 @@
+
+@import './variable.less';
+
+/* 左侧菜单样式覆盖 */
+.frame{
+  .sidemenu{
+    .el-menu-item.is-active{
+      background-color: #AA3130!important;
+    }
+    .el-submenu .el-menu-item{
+      height: 40px;
+      line-height: 40px;
+    }
+    // 侧边栏变窄时的宽度
+    .el-menu--collapse{
+      width: 45px;
+      .el-submenu__icon-arrow{
+        display: none;
+      }
+      .el-submenu__title{
+        padding-left: 10px!important;
+      }
+      .el-submenu{
+        .el-submenu__title{
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
