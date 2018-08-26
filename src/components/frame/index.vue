@@ -1,8 +1,9 @@
 <template>
-  <el-container class="frame">
+  <el-container class="vs-frame">
     <sidemenu></sidemenu>
     <el-container class="is-vertical">
       <headbar></headbar>
+      <dynamicSubmenu></dynamicSubmenu>
       <el-main>
         <transition name="el-fade-in-linear" mode="out-in">
           <router-view/>
@@ -14,18 +15,21 @@
 <script>
 import sidemenu from '@/components/frame/sidemenu'
 import headbar from '@/components/frame/headbar'
+import dynamicSubmenu from '@/components/frame/dynamic-submenu'
+
 export default {
   name: 'frame',
   components: {
     sidemenu,
-    headbar
+    headbar,
+    dynamicSubmenu
   }
 }
 </script>
 
 <style lang="less" scoped>
   @import '../../style/common.less';
-  .frame{
+  .vs-frame{
     height: 100%;
   }
 </style>
