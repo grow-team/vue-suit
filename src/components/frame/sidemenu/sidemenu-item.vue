@@ -42,11 +42,18 @@ export default {
     },
     parentPath: {
       type: [String]
+    },
+    strogeSubMenu: {
+      type: [Array]
     }
   },
   methods: {
     resolvePath (path) {
-      return this.parentPath ? this.parentPath + '/' + path : path
+      if (!path.startsWith('/')) {
+        return this.parentPath ? this.parentPath + '/' + path : path
+      } else {
+        return path
+      }
     }
   }
 }
