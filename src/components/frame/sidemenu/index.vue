@@ -42,9 +42,6 @@ export default{
       }
     }
   },
-  beforeMount () {
-    console.log(this.sideMenu)
-  },
   components: {
     logoBar,
     sidemenuItem

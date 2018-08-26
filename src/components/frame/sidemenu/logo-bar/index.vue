@@ -1,6 +1,6 @@
 <template>
   <div class="vs-logo">
-    vue-suit
+    vue suit
   </div>
 </template>
 <script>
