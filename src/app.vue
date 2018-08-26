@@ -4,15 +4,9 @@
   </div>
 </template>
 <script>
-import '@/style/common.less'
+import '@/style/index.less'
 
 export default {
 
 }
 </script>
-
-<style lang="less" scoped>
-  #app {
-    height: 100%;
-  }
-</style>

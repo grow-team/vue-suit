@@ -1,5 +1,5 @@
 <template>
-  <el-header class="header" height="39px">
+  <el-header class="header" height="44px">
     <i class="switch" @click="toggleSideBar">
       开关
     </i>
@@ -17,7 +17,6 @@ export default{
 </script>
 <style lang="less" scoped>
 .header{
-  height: 39px;
   width: 100%;
   border-bottom: 1px solid #f6f6f6;
 }
