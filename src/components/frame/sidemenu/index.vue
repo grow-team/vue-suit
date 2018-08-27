@@ -1,5 +1,5 @@
 <template>
-  <el-aside class="sidemenu" :width="sideWidth">
+  <el-aside class="sidemenu" v-bind:style="{ width:sideWidth }">
     <logo-bar></logo-bar>
     <el-menu :default-active="$route.path" class="el-menu-vertical-demo"
     @open="handleOpen"
@@ -17,16 +17,21 @@ import logoBar from '@/components/frame/sidemenu/logo-bar'
 import sidemenuItem from '@/components/frame/sidemenu/sidemenu-item'
 import { createNamespacedHelpers } from 'vuex'
 import { sideMenu } from '@/router'
-import { vsSideMenuCollapse, vsVisitedSubmenu } from '@/config'
+import { vsSideMenuCollapse, vsVisitedSubmenu, page } from '@/config'
 import { INIT_APP_SIDEMENU_SWITCH, INIT_VISITED_SUBMENU_LIST } from '@/store/types'
+import { getBodySize } from '@/utils'
 
 const { mapState, mapActions } = createNamespacedHelpers('app')
 export default{
   name: 'sidemenu',
   data () {
+    let sideWidth = '0'
+    if (getBodySize().width > page.maxScreenWidth) {
+      sideWidth = '200px'
+    }
     return {
       sideMenu,
-      sideWidth: '200px',
+      sideWidth,
       strogeSubRouter: []
     }
   },
@@ -37,24 +42,33 @@ export default{
   },
   watch: {
     sideMenuCollapse () {
-      if (this.sideMenuCollapse) {
-        this.sideWidth = '45px'
+      if (getBodySize().width <= page.maxScreenWidth) {
+        this.sideMenuCollapse = !this.sideMenuCollapse
+        if (this.sideMenuCollapse) {
+          this.sideWidth = '0'
+        } else {
+          this.sideWidth = '200px'
+        }
       } else {
-        this.sideWidth = '200px'
+        if (this.sideMenuCollapse) {
+          this.sideWidth = '45px'
+        } else {
+          this.sideWidth = '200px'
+        }
       }
     }
   },
   async beforeMount () {
+    // 初始化左侧菜单展开收起的状态
     let sessionDataCollapse = sessionStorage.getItem(vsSideMenuCollapse)
     if (sessionDataCollapse) {
       this.sidmenuCollapse(sessionDataCollapse !== 'false')
     }
-    // 读取存储好的路由
+    // 初始化浏览过的头部菜单
     let sessionDataSubmenu = sessionStorage.getItem(vsVisitedSubmenu)
     if (sessionDataSubmenu) {
       let strogeSubMenu = JSON.parse(sessionDataSubmenu)
       this.findVisitedSubmenu('', sideMenu, strogeSubMenu)
-      // 初始化路由
       await this.initVisitedSubmenu({
         visitedRoute: this.strogeSubRouter,
         curRoute: this.$route
@@ -98,6 +112,12 @@ export default{
   transition: width 0.2s;
   .el-menu{
     border: none;
+  }
+}
+
+@media screen and (max-width: 992px){
+  .sidemenu {
+    width: 0px;
   }
 }
 </style>
