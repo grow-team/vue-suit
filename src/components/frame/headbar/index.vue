@@ -14,6 +14,9 @@
             小明<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>
+              <a target="_blank" href="https://github.com/grow-team/vue-suit">github</a>
+            </el-dropdown-item>
             <el-dropdown-item>个人中心</el-dropdown-item>
             <el-dropdown-item>设置</el-dropdown-item>
             <el-dropdown-item>退出</el-dropdown-item>
