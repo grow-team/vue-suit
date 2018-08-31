@@ -1,4 +1,4 @@
-import vsWidget from './widget'
+import vsWidget from './index.vue'
 
 export default {
   vsWidget,

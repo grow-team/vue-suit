@@ -28,7 +28,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  @import '../../style/common.less';
   .vs-frame{
     height: 100%;
   }
