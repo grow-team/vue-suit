@@ -11,6 +11,7 @@ const Layout = () => import('@/views/components/layout')
 const Pagination = () => import('@/views/components/pagination')
 const Table = () => import('@/views/components/table')
 const Tree = () => import('@/views/components/tree')
+const Widget = () => import('@/views/components/widget')
 
 export default[{
   path: '/component',
@@ -20,6 +21,13 @@ export default[{
     icon: 'el-icon-menu'
   },
   children: [
+    {
+      path: 'widget',
+      component: Widget,
+      meta: {
+        title: 'widget'
+      }
+    },
     {
       path: 'button',
       component: Button,

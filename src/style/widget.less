@@ -1,0 +1,32 @@
+@import './variable.less';
+
+.vs-widget{
+  background-color: #fff;
+  border: 1px solid @light-border-color;
+  padding: 12px 20px 15px;
+  box-shadow: @light-border-color 1px 1px 16px;
+  .vs-widget-header{
+    min-height: 49px;
+    border-bottom: 1px solid @light-border-color;
+    .vs-widget-caption{
+      padding: 10px 0;
+      float: left;
+      .vs-widget-caption-subject{
+        font-size: 1.5rem;
+      }
+    }
+    .vs-widget-actions{
+      float: right;
+      padding: 5px 0;
+    }
+    .el-button.is-circle{
+      padding: 8px;
+    }
+  }
+  .vs-widget-header + .vs-widget-body{
+    margin-top: 10px;
+  }
+  .vs-widget-body{
+    padding-top: 8px;
+  }
+}
