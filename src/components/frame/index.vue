@@ -4,7 +4,7 @@
     <el-container class="is-vertical">
       <headbar></headbar>
       <dynamicSubmenu></dynamicSubmenu>
-      <el-main>
+      <el-main v-sticky="{ scrollEl:true }">
         <transition name="el-fade-in-linear" mode="out-in">
           <router-view/>
         </transition>

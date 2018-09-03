@@ -12,6 +12,7 @@ const Pagination = () => import('@/views/components/pagination')
 const Table = () => import('@/views/components/table')
 const Tree = () => import('@/views/components/tree')
 const Widget = () => import('@/views/components/widget')
+const Sticky = () => import('@/views/components/sticky')
 
 export default[{
   path: '/component',
@@ -68,6 +69,13 @@ export default[{
       component: Tree,
       meta: {
         title: '树'
+      }
+    },
+    {
+      path: 'sticky',
+      component: Sticky,
+      meta: {
+        title: '固定'
       }
     }
   ]
