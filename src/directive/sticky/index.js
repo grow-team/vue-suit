@@ -24,9 +24,9 @@ const getBinding = (binding) => {
 const graceStick = ({ el, bind }) => {
   const { style } = el
   // if (canSticky) {
-  // 	style.position = 'sticky';
+  //  style.position = 'sticky';
   // } else {
-  // 	style.position = 'fixed';
+  //  style.position = 'fixed';
   // }
   style.width = `${el.style.width || el.offsetWidth}px`
   style.position = 'fixed'
