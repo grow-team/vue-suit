@@ -67,15 +67,15 @@ export default{
   width: 100%;
   height: 45px;
   line-height: 45px;
-  border-bottom: 1px solid @light-border-color;
-  box-shadow: 0 2px 2px 0 @light-border-color;
+  border-bottom: 1px solid @vs-border-color-linght;
+  box-shadow: 0 2px 2px 0 @vs-border-color-linght;
   .vs-submenu-item{
     cursor: pointer;
     position: relative;
     font-size: 14px;
     float: left;
     padding: 0 35px 0 15px;
-    border-right: 1px solid @light-border-color;
+    border-right: 1px solid @vs-border-color-linght;
     &::after{
       content: '';
       position: absolute;

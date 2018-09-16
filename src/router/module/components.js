@@ -13,6 +13,7 @@ const Table = () => import('@/views/components/table')
 const Tree = () => import('@/views/components/tree')
 const Widget = () => import('@/views/components/widget')
 const Sticky = () => import('@/views/components/sticky')
+const Icon = () => import('@/views/components/icon')
 
 export default[{
   path: '/component',
@@ -27,6 +28,13 @@ export default[{
       component: Widget,
       meta: {
         title: 'widget'
+      }
+    },
+    {
+      path: 'icon',
+      component: Icon,
+      meta: {
+        title: 'icon'
       }
     },
     {

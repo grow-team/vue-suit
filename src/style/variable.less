@@ -1,11 +1,35 @@
 
 
-@current-color:#409EFF;
+@vs-color-white: #fff;
+@vs-color-black: #000;
+// 主色调
+@vs-color-primary: #009688;
+
+@vs-color-primary-light-1: mix(@vs-color-white, @vs-color-primary, 10%);
+@vs-color-primary-light-2: mix(@vs-color-white, @vs-color-primary, 20%);
+@vs-color-primary-light-3: mix(@vs-color-white, @vs-color-primary, 30%); 
+@vs-color-primary-light-4: mix(@vs-color-white, @vs-color-primary, 40%);
+@vs-color-primary-light-5: mix(@vs-color-white, @vs-color-primary, 50%);
+@vs-color-primary-light-6: mix(@vs-color-white, @vs-color-primary, 60%);
+@vs-color-primary-light-7: mix(@vs-color-white, @vs-color-primary, 70%);
+@vs-color-primary-light-8: mix(@vs-color-white, @vs-color-primary, 80%);
+@vs-color-primary-light-9: mix(@vs-color-white, @vs-color-primary, 90%);
+
+// 文字颜色
+@vs-font-color: #333;
+
+@vs-font-color-sublight: mix(@vs-font-color, @vs-color-white, 80%);
+@vs-font-color-light: mix(@vs-font-color, @vs-color-white, 50%);
 
 // logo的背景色
-@logo-bg:#AA3130;
+@logo-bg: @vs-color-primary;
 @logo-color: #fff;
 
 // 浅色的边框
-@light-border-color: #e7ecf1;
-@light-bgcolor: #f9f9f9;
+@vs-border-color-linght: #e7ecf1;
+
+// 浅色背景
+@vs-bg-color-light: #f9f9f9;
+
+
+
