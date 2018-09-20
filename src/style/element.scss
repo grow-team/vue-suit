@@ -1,0 +1,55 @@
+
+@import './variable.scss';
+/* 颜色参数样式参数覆盖 */
+$--color-primary: $vs-color-primary;
+$--color-success: $vs-color-primary !default;
+$--color-warning: #F78400 !default;
+$--color-danger: #f56c6c !default;
+$--color-info: #909399 !default;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import "~element-ui/packages/theme-chalk/src/index";
+
+
+/* 头部样式覆盖 */
+.vs-header{
+  &.el-header{
+    padding-left: 10px;
+  }
+}
+/* 左侧菜单样式覆盖 */
+.vs-frame{
+  .sidemenu{
+    .el-menu-item.is-active{
+      background-color: $vs-color-primary!important;
+    }
+    .el-submenu .el-menu-item{
+      height: 40px;
+      line-height: 40px;
+    }
+    // 侧边栏变窄时的宽度
+    .el-menu--collapse{
+      .el-submenu__icon-arrow{
+        display: none;
+      }
+      .el-submenu__title{
+        padding-left: 10px!important;
+      }
+      .el-submenu{
+        .el-submenu__title{
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.el-main{
+  padding: 1.8rem;
+  background-color: $vs-bg-color-light;
+}
+.el-row + .el-row{
+  margin-top: 18px;
+}
