@@ -6,12 +6,23 @@
     </div>
     <div class="vs-topright-box">
       <span class="vs-top-item">
+        <el-dropdown @command="toggleLang">
+          <span class="el-dropdown-link">
+            {{curLang}}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="zhCN">中文</el-dropdown-item>
+            <el-dropdown-item command="en">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </span>
+      <span class="vs-top-item">
         <i class="el-icon-bell"></i>
       </span>
       <span class="vs-top-item">
         <el-dropdown>
           <span class="el-dropdown-link">
-            小明<i class="el-icon-arrow-down el-icon--right"></i>
+            {{$t('user.name')}}<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>
@@ -32,6 +43,15 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapState } = createNamespacedHelpers('app')
 export default{
   name: 'headerbar',
+  data () {
+    return {
+      curLang: '中文',
+      lang: {
+        zhCN: '中文',
+        en: 'English'
+      }
+    }
+  },
   computed: {
     ...mapState({
       sideMenuCollapse: 'sideMenuCollapse'
@@ -40,6 +60,10 @@ export default{
   methods: {
     toggleSideBar () {
       this.$store.dispatch('app/APP_SIDEMENU_SWITCH')
+    },
+    toggleLang (command) {
+      this.curLang = this.lang[command]
+      this.$i18n.locale = command
     }
   }
 }

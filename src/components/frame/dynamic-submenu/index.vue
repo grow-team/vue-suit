@@ -2,7 +2,7 @@
   <div class="dynamic-submenu">
     <ul class="vs-submenu-bar">
       <li @click="goRoute(item)" v-for="item in visitedSubMenuList" :key="item.path||item.name" class="vs-submenu-item" v-bind:class="{'active': item.path === curMenuRouter.path }" >
-        {{item.meta.title}}
+        {{routeI18n(item.meta.title)}}
         <i @click="close(item,$event)" class="el-icon-circle-close-outline vs-submenu-switch"></i>
       </li>
     </ul>
@@ -12,6 +12,7 @@
 import { createNamespacedHelpers } from 'vuex'
 import { UPDATE_VISITED_SUBMENU_LIST, DELETE_VISITED_SUBMENU } from '@/store/types'
 import { vsVisitedSubmenu } from '@/config'
+import { routeI18n } from '@/utils/index'
 
 const { mapState, mapActions } = createNamespacedHelpers('app')
 export default{
@@ -54,7 +55,8 @@ export default{
     },
     goRoute (route) {
       this.$router.push(route)
-    }
+    },
+    routeI18n
   }
 }
 </script>

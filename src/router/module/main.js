@@ -8,14 +8,14 @@ export default [{
   redirect: '/main',
   name: 'main',
   meta: {
-    title: '主页',
+    title: 'main',
     icon: 'el-icon-tickets'
   },
   children: [{
     path: '/main',
     component: Main,
     meta: {
-      title: '主页一'
+      title: 'main'
     }
   }]
-} ]
+}]

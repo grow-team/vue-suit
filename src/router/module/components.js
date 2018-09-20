@@ -41,49 +41,49 @@ export default[{
       path: 'button',
       component: Button,
       meta: {
-        title: '按钮'
+        title: 'button'
       }
     },
     {
       path: 'form',
       component: Form,
       meta: {
-        title: '表单'
+        title: 'form'
       }
     },
     {
       path: 'layout',
       component: Layout,
       meta: {
-        title: '布局'
+        title: 'layout'
       }
     },
     {
       path: 'pagination',
       component: Pagination,
       meta: {
-        title: '分页'
+        title: 'pagination'
       }
     },
     {
       path: 'table',
       component: Table,
       meta: {
-        title: '表格'
+        title: 'table'
       }
     },
     {
       path: 'tree',
       component: Tree,
       meta: {
-        title: '树'
+        title: 'tree'
       }
     },
     {
       path: 'sticky',
       component: Sticky,
       meta: {
-        title: '固定'
+        title: 'sticky'
       }
     }
   ]

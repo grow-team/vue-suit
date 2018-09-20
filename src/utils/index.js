@@ -8,3 +8,8 @@ export function getBodySize () {
     width: body.clientWidth
   }
 }
+
+export function routeI18n (title) {
+  let router = 'router.' + title
+  return this.$te(router) ? this.$t(router) : title
+}
