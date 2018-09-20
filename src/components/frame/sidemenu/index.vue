@@ -105,7 +105,7 @@ export default{
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .sidemenu{
   background-color:#393D49;
   min-height: 100%;

@@ -13,14 +13,14 @@ export default{
   }
 }
 </script>
-<style lang="less" scoped>
-  @import '../../../../style/variable.less';
+<style lang="scss" scoped>
+  @import '../../../../style/variable.scss';
   .vs-logo{
     width: 100%;
     height: 45px;
     line-height: 45px;
     text-align: center;
-    background-color: @logo-bg;
-    color: @logo-color;
+    background-color: $logo-bg;
+    color: $logo-color;
   }
 </style>

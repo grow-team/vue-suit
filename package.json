@@ -12,9 +12,11 @@
     "element-ui": "^2.4.6",
     "less-loader": "^4.1.0",
     "lodash": "^4.17.10",
+    "node-sass": "^4.9.3",
     "register-service-worker": "^1.0.0",
-    "vue": "^2.5.17",
+    "sass-loader": "^7.1.0",
     "v-charts": "^1.17.10",
+    "vue": "^2.5.17",
     "vue-awesome": "^3.1.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

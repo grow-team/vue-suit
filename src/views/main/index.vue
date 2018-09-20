@@ -137,17 +137,17 @@ export default{
   }
 }
 </script>
-<style lang="less" scoped>
-@import '../../style/variable.less';
+<style lang="scss" scoped>
+@import '../../style/variable.scss';
 
-@color-soft-purple:#8E44AD;
-@color-soft-orange:#F78400;
-@color-soft-blue:#1E9FFF;
+$color-soft-purple:#8E44AD;
+$color-soft-orange:#F78400;
+$color-soft-blue:#1E9FFF;
 
 .widget-thumb-heading{
   font-size: 14px;
   font-weight: 700;
-  color: @vs-font-color-light;
+  color: $vs-font-color-light;
   margin: 0 0 20px;
 }
 .widget-thumb-icon{
@@ -167,7 +167,7 @@ export default{
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: @vs-font-color-light;
+  color: $vs-font-color-light;
 }
 .widget-thumb-body-stat{
   display: block;
@@ -176,15 +176,15 @@ export default{
   color: #3e4f5e;
 }
 .bg-green{
-  background-color: @vs-color-primary-light-3;
+  background-color: $vs-color-primary-light-3;
 }
 .bg-purple{
-  background-color: @color-soft-purple;
+  background-color: $color-soft-purple;
 }
 .bg-orange{
-  background-color: @color-soft-orange;
+  background-color: $color-soft-orange;
 }
 .bg-blue{
-  background-color: @color-soft-blue;
+  background-color: $color-soft-blue;
 }
 </style>

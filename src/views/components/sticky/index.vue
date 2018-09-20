@@ -10,7 +10,7 @@ export default {
   name: 'component-sticky'
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .lang-page{
   height: 1500px;
 }

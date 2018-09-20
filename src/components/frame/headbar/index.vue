@@ -44,7 +44,7 @@ export default{
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .vs-header{
   width: 100%;
   border-bottom: 1px solid #f6f6f6;

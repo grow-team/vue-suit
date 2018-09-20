@@ -58,24 +58,24 @@ export default{
   }
 }
 </script>
-<style lang="less" scoped>
-@import '../../../style/variable.less';
+<style lang="scss" scoped>
+@import '../../../style/variable.scss';
 
-@activeBgColor: #f6f6f6;
-@thickBorderColor: #292B34;
+$activeBgColor: #f6f6f6;
+$thickBorderColor: #292B34;
 .dynamic-submenu{
   width: 100%;
   height: 45px;
   line-height: 45px;
-  border-bottom: 1px solid @vs-border-color-linght;
-  box-shadow: 0 2px 2px 0 @vs-border-color-linght;
+  border-bottom: 1px solid $vs-border-color-linght;
+  box-shadow: 0 2px 2px 0 $vs-border-color-linght;
   .vs-submenu-item{
     cursor: pointer;
     position: relative;
     font-size: 14px;
     float: left;
     padding: 0 35px 0 15px;
-    border-right: 1px solid @vs-border-color-linght;
+    border-right: 1px solid $vs-border-color-linght;
     &::after{
       content: '';
       position: absolute;
@@ -84,18 +84,18 @@ export default{
       width: 0;
       height: 2px;
       border-radius: 0;
-      background-color: @thickBorderColor;
+      background-color: $thickBorderColor;
       transition: all .3s;
       -webkit-transition: all .3s;
     }
     &.active{
-      background-color:@activeBgColor;
+      background-color:$activeBgColor;
       &::after{
         width: 100%;
       }
     }
     &:hover{
-      background-color:@activeBgColor;
+      background-color:$activeBgColor;
       &::after{
         width: 100%;
       }

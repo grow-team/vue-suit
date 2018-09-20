@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import '@/style/index.less'
+import '@/style/index.scss'
 
 export default {
 

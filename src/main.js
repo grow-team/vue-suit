@@ -15,7 +15,7 @@ import Sticky from './directive/sticky'
 import './registerServiceWorker'
 import Widget from './plugins/widget/index.js'
 
-import '@/style/index.less'
+import '@/style/index.scss'
 
 Vue.use(ElementUI)
 Vue.use(Widget)

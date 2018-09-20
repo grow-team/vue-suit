@@ -68,8 +68,8 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
-@import '../../../style/variable.less';
+<style lang="scss" scoped>
+@import '../../../style/variable.scss';
 .vs-icon-group{
   display: flex;
   flex-wrap: wrap;

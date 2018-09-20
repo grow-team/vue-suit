@@ -58,7 +58,7 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
   .menu-block .menu-block{
     padding: 2px 0;
     background-color: #000;
