@@ -63,9 +63,6 @@ import wd from '@/plugins/widget/index.js'
 
 export default {
   name: 'com-pagination',
-  data: function(){
-    return {}
-  },
   components: {
     widget: wd.vsWidget
   }
